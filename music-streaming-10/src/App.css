@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.addAlbum-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
