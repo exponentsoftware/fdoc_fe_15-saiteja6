@@ -10,14 +10,24 @@ export default class AddAlbum extends React.Component {
         }
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({[e.target.name]: e.target.value})
+    }
+
+    handleSubmit = e => {
+        e.preventDefault();
+        let objInHandleSubmit = {
+            id: this.state.album_cover + 1,
+            artist: this.state.artist,
+            album: this.state.album_title,
+            album_cover: this.state.album_cover
+        }
     }
 
     render() {
     return (
         <div>
-            <form className='addAlbum-container'>
+            <form className='addAlbum-container' onSubmit={this.handleSubmit}>
                 <label>Album Title:</label>
                 <input
                     type='text'
