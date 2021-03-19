@@ -11,7 +11,7 @@ export default class AddAlbum extends React.Component {
     }
 
     handleChange = (e) => {
-        
+        this.setState({[e.target.name]: e.target.value})
     }
 
     render() {
@@ -22,6 +22,7 @@ export default class AddAlbum extends React.Component {
                 <input
                     type='text'
                     placeholder='album_title'
+                    name='album_title'
                     value={this.state.album_title}
                     onChange={this.handleChange}
                     >
@@ -30,6 +31,7 @@ export default class AddAlbum extends React.Component {
                 <input
                     type='text'
                     placeholder='aritst'
+                    name='artist'
                     value={this.state.artist}
                     onChange={this.handleChange}
                     >
@@ -39,6 +41,7 @@ export default class AddAlbum extends React.Component {
                 <input
                     type='file'
                     placeholder='album_cover'
+                    name='album_cover'
                     value={this.state.album_cover}
                     onChange={this.handleChange}
                     >
