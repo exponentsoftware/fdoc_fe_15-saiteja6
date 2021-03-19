@@ -10,6 +10,7 @@ export default class Album extends React.Component {
 
     handleClick = e => {
         this.props.delete(this.props.id)    
+        
     }
 
     render() {

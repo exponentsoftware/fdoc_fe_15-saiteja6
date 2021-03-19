@@ -5,6 +5,7 @@ import AddAlbum from './components/AddAlbum';
 import Albums from './components/Albums'
 
 class App extends React.Component {
+  
     constructor(props) {
       super(props);
       this.state = {
@@ -33,22 +34,37 @@ class App extends React.Component {
       ]
       }
     }
+  
 
-    receiver = (objInHandleSubmit) => {
+    receiver = (albumObj) => {
         let { albums } = this.state;
-        albums.push(objInHandleSubmit)
+        let album = albums;
+        album.push(albumObj)
+        this.setState({
+          albums: album
+        })
+        
     }
 
-    delete = () => {
-
+    delete = (id) => {
+        // console.log(id);
+        let album = this.state.albums.filter(album => {
+          return album.id !== id  
+        })
+        this.setState({
+          albums: album
+        })
     }
 
     render() {
       return(
+
         <div className="App">
             {/* <Album artist={this.state.artist} album={this.state.album} albumCover={this.state.albumCover}/> */}
             <Albums albums={this.state.albums} delete={this.delete} />
             <AddAlbum receiver={this.receiver}/>
+    {console.log(this.state.albums)}
+
         </div>
       )
     }

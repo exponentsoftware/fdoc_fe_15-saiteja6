@@ -16,13 +16,13 @@ export default class AddAlbum extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        let objInHandleSubmit = {
+        let albumObj = {
             id: this.state.album_cover + 1,
             artist: this.state.artist,
             album: this.state.album_title,
             album_cover: this.state.album_cover
         }
-        this.props.receiver(objInHandleSubmit);
+        this.props.receiver(albumObj);
     }
 
     render() {

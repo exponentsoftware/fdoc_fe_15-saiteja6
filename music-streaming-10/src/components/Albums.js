@@ -8,10 +8,11 @@ export default function Albums(props) {
 {props.albums.map(album => {
     return( <Album 
                 key={album.id} 
+                id={album.id}
                 albumCover={album.album_cover}
                 artist={album.artist}
                 albumTitle={album.album_title}
-                // delete={this.props.delete}
+                delete={props.delete}
                 />
             )})}
         </div>
