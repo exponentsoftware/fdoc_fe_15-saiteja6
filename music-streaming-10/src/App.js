@@ -34,12 +34,21 @@ class App extends React.Component {
       }
     }
 
+    receiver = (objInHandleSubmit) => {
+        let { albums } = this.state;
+        albums.push(objInHandleSubmit)
+    }
+
+    delete = () => {
+
+    }
+
     render() {
       return(
         <div className="App">
             {/* <Album artist={this.state.artist} album={this.state.album} albumCover={this.state.albumCover}/> */}
-            <Albums albums={this.state.albums} />
-            <AddAlbum />
+            <Albums albums={this.state.albums} delete={this.delete} />
+            <AddAlbum receiver={this.receiver}/>
         </div>
       )
     }

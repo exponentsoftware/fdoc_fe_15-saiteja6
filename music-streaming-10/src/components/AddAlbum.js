@@ -22,6 +22,7 @@ export default class AddAlbum extends React.Component {
             album: this.state.album_title,
             album_cover: this.state.album_cover
         }
+        this.props.receiver(objInHandleSubmit);
     }
 
     render() {

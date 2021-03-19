@@ -3,17 +3,27 @@ import React from 'react'
 import { Card } from 'antd';
 const { Meta } = Card;
 
-export default function Album(props) {
-    console.log(props)
+export default class Album extends React.Component {
+    // constructor(props) {
+    //     super(props);
+    // }
+
+    handleClick = e => {
+        this.props.delete(this.props.id)    
+    }
+
+    render() {
     return (
         <div>
             <Card
     hoverable
     style={{ width: 240 }}
-    cover={<img alt="Rockstar-album" src={props.albumCover} />}
+    cover={<img alt="Rockstar-album" src={this.props.albumCover} />}
     >
-    <Meta title={props.albumTitle} description={props.artist} />
+    <Meta title={this.props.albumTitle} description={this.props.artist} />
     </Card>
+    <button onClick={this.handleClick}>Delete</button>
         </div>
     )
+    } 
 }

@@ -11,6 +11,7 @@ export default function Albums(props) {
                 albumCover={album.album_cover}
                 artist={album.artist}
                 albumTitle={album.album_title}
+                // delete={this.props.delete}
                 />
             )})}
         </div>
